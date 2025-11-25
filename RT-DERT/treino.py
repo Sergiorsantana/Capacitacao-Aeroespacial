@@ -1,6 +1,10 @@
 # ==========================================
-# SCRIPT CONSOLIDADO - RT-DETR-X (GPU 6–8 GB)
+# RT-DETR-X
 # ==========================================
+# O RT-DETR-X é uma versão otimizada do DETR voltada para detecção em tempo real.
+# Ele usa atenção para localizar os objetos direto na imagem, sem precisar de
+# propostas de regiões. Costuma ser rápido e eficiente para treinos e inferências.
+
 
 import os
 import shutil
@@ -22,7 +26,7 @@ WORKSPACE = "college-jcb9y"
 PROJECT_NAME = "aircraft-damage-detection-a8z4k"
 VERSION = 1
 FORMAT = "yolov8"
-RUN_NAME = "rtdetr_X_aircraft_damage_140ep"  # ✅ Atualizado para X
+RUN_NAME = "rtdetr_X_aircraft_damage_140ep"  
 
 # -----------------------------
 # 2. DOWNLOAD DO DATASET
