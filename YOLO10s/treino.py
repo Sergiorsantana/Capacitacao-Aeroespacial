@@ -4,46 +4,28 @@
 # O YOLOv10s é a versão mais leve da família YOLOv10. Foi feito para rodar rápido,
 # com baixo consumo de GPU, mantendo boa precisão para tarefas gerais de detecção.
 
-# ------------------------------------------------
-# Script para treinar o modelo YOLO usando dataset
-# baixado do Roboflow, ajustar rótulos, criar YAML,
-# treinar, gerar gráficos e salvar uma predição teste.
-# ------------------------------------------------
+# ==========================================
+# YOLOv10s – Treinamento Completo
+# ==========================================
+# Script responsável por preparar o dataset, ajustar rótulos,
+# gerar o YAML, treinar o YOLOv10s e salvar métricas e predições.
+#
+# O que este pipeline faz:
+# 1) Faz o download do dataset via Roboflow já no formato YOLO.
+# 2) Corrige os rótulos (classe 1 → 0) para manter apenas uma classe.
+# 3) Cria automaticamente o arquivo YAML usado pelo Ultralytics.
+# 4) Inicia o treinamento do YOLOv10s com 140 épocas e diversos ajustes:
+#    - LR refinado, momentum, decay, freeze e augmentations.
+# 5) Lê o CSV gerado pelo Ultralytics e produz gráficos de métricas
+#    como precision, mAP50, losses e recall.
+# 6) Compacta todos os resultados em um único arquivo ZIP.
+# 7) Realiza uma predição de teste e salva a imagem anotada.
+#
+# YOLOv10s é um detector rápido e leve, ideal quando se busca um 
+# bom equilíbrio entre velocidade e precisão. O formato do dataset 
+# e a etapa de correção de rótulos garantem compatibilidade total 
+# com o pipeline da Ultralytics.
 
-# 1. CONFIGURAÇÕES INICIAIS
-# Define chave da API, workspace, nome do projeto e
-# demais parâmetros para baixar o dataset e treinar.
-
-# 2. DOWNLOAD DO DATASET
-# Conecta ao Roboflow e baixa a versão escolhida
-# no formato YOLO. Salva o caminho local do dataset.
-
-# 3. CORREÇÃO DE RÓTULOS
-# Ajusta os arquivos de label, trocando a classe “1”
-# por “0” quando necessário. Faz a correção nos
-# diretórios de treino, validação e teste.
-
-# 4. CRIAÇÃO DO ARQUIVO YAML
-# Gera o arquivo .yaml com os caminhos do dataset
-# e informações de classes, usado pelo YOLO no treino.
-
-# 5. TREINAMENTO
-# Carrega o modelo YOLO e inicia o treinamento com
-# os hiperparâmetros definidos (épocas, batch, aug etc.).
-# Os resultados ficam salvos em runs/detect/NOME.
-
-# 6. GRÁFICOS DE MÉTRICAS
-# Lê o CSV gerado pelo YOLO e cria gráficos básicos
-# como precision, mAP50, losses e recall. Cada gráfico
-# é salvo dentro da pasta do experimento.
-
-# 7. EXPORTAÇÃO
-# Compacta toda a pasta do treinamento em um arquivo ZIP
-# para facilitar o armazenamento e compartilhamento.
-
-# 8. PREDIÇÃO DE TESTE
-# Seleciona uma imagem da pasta de teste, roda uma
-# predição rápida e salva a imagem com bounding boxes.
 
 import os
 import shutil
