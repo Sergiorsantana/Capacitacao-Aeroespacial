@@ -5,6 +5,29 @@
 # Ele usa a Loss Focal para lidar melhor com o desequilíbrio entre classes,
 # o que ajuda a melhorar a precisão em objetos menores ou menos frequentes.
 
+# ==========================================
+# RETINANET 
+# ==========================================
+# Pipeline 
+#
+# Resumo do que o script faz:
+# 1) Baixa o dataset via Roboflow no formato COCO (requerido pelo Detectron2).
+# 2) Converte as anotações para o formato interno usado pelo framework.
+# 3) Registra automaticamente os splits (train/valid/test) no DatasetCatalog.
+# 4) Carrega o RetinaNet R50-FPN pré-treinado no COCO e ajusta para 1 classe.
+# 5) Configura hiperparâmetros (LR, warmup, steps, épocas, batch size etc.).
+# 6) Inicia o treinamento e salva checkpoints no diretório do experimento.
+# 7) Avalia o modelo usando o COCOEvaluator no conjunto de validação.
+# 8) Gera visualizações das predições nas imagens de teste.
+# 9) Salva métricas em JSON e compacta todo o resultado em um arquivo ZIP.
+#
+# Observações gerais:
+# - O RetinaNet é um detector de uma só passada (one-stage).
+# - Ele usa a Focal Loss, que melhora o aprendizado em datasets desbalanceados,
+#   evitando que a rede foque demais em exemplos "fáceis".
+# - Detectron2 trabalha naturalmente com COCO, por isso a conversão inicial.
+# - O pipeline gera métricas, imagens anotadas e um ZIP pronto para análise.
+
 
 import os
 import shutil
