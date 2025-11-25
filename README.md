@@ -13,3 +13,17 @@ O principal objetivo da Residência Tecnológica em Tecnologias Aeroespaciais Av
 
 
 **Aluno: Isaias Abner Lima Saraiva**
+
+## Fonte dos Dados e Estrutura dos Dados
+
+Para o treinamento dos modelos, será utilizado o *dataset* **"Aircraft Damage Detection"** (obtido via [Roboflow Universe](https://universe.roboflow.com/college-jcb9y/aircraft-damage-detection-a8z4k)).
+
+### Detecção de Defeitos
+
+O *dataset* original é rotulado para **Detecção de Objetos** (localização da falha via *bounding boxes*). O foco é treinar modelos para **detecção de defeitos em aeronaves**, ou seja, identificar a presença e a localização das anomalias.
+
+| Categoria de Classe | Condição Original do Dataset | Rótulo de Detecção |
+| :--- | :--- | :--- |
+| **DEFECTO** (Classe 1) | Imagens que possuem **anotações de defeitos** (presença de *bounding boxes*). | A imagem **contém** um defeito. |
+| **NORMAL** (Classe 0) | Imagens que **não possuem anotações** (imagens de fundo limpo). | A imagem está **sem falhas**. |
+
