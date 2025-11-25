@@ -1,6 +1,24 @@
 # ==========================================
-# SCRIPT CONSOLIDADO - YOLOv8n (100 ÉPOCAS)
+# YOLOv8n 
 # ==========================================
+# Este script possui todo o processo necessário para treinar o YOLOv8n:
+# desde o download do dataset até a geração dos gráficos e compactação
+# dos resultados.  
+#
+# O fluxo inclui:
+# 1) Download automático do dataset via Roboflow no formato YOLO.
+# 2) Ajuste dos rótulos (classe 1 → 0) para manter um único rótulo.
+# 3) Criação do arquivo YAML usado pelo modelo.
+# 4) Treinamento do YOLOv8n por 100 épocas com parâmetros otimizados
+#    e augmentations básicas.
+# 5) Leitura do CSV gerado e criação de gráficos de mAP, precision,
+#    losses e recall.
+# 6) Geração de um arquivo ZIP com toda a pasta de resultados.
+#
+# O YOLOv8n é a versão mais leve da família, indicado para cenários onde 
+# velocidade e baixo uso de GPU pesam mais do que precisão máxima.  
+# Este pipeline deixa tudo pronto para reproduzir o experimento do início ao fim.
+
 
 import os
 import shutil
