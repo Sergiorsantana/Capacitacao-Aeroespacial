@@ -1,7 +1,7 @@
 # ==========================================
-# YOLOv8n 
+# YOLOv10s 
 # ==========================================
-# O YOLOv8n é a versão mais leve da família YOLOv8. Foi feito para rodar rápido,
+# O YOLOv10s é a versão mais leve da família YOLOv10. Foi feito para rodar rápido,
 # com baixo consumo de GPU, mantendo boa precisão para tarefas gerais de detecção.
 
 # ------------------------------------------------
