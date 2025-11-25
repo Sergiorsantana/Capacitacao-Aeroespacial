@@ -1,6 +1,20 @@
 # ==========================================
-# SCRIPT CONSOLIDADO - YOLOv8n (100 ÉPOCAS) COM TESTE
+# YOLOv8n
 # ==========================================
+# Este script reúne todo o fluxo de trabalho para treinar o YOLOv8n,
+# passando pelo download do dataset, correção de rótulos, criação
+# do YAML e execução de um treino com hiperparâmetros mais agressivos.
+#
+# O YOLOv8n é o modelo mais leve da família, pensado para testes
+# rápidos e para rodar em hardwares mais modestos. Mesmo sendo menor,
+# ele ainda consegue bons resultados quando recebe augmentations mais
+# fortes e um número maior de épocas, como feito aqui.
+#
+# Depois do treinamento, o script gera os gráficos das métricas,
+# compacta automaticamente os resultados e ainda executa uma predição
+# final usando uma imagem de teste para validar o desempenho do modelo
+# de forma prática.
+
 
 import os
 import shutil
