@@ -37,6 +37,8 @@ Este repositório está estruturado da seguinte forma:
 - **YOLO10s**: contém os arquivos referentes ao treinamento do modelo YOLOv10s.
 - **YOLO8n**: código-fonte para o treinamento do YOLOv8n.
 - **YOLO8s_V1 / YOLO8s_V2 / YOLO8s_V3**: versões alternativas de configuração e treinamento do modelo YOLOv8s.
+Os resultados de treinamento, validação métricas de desempenho, encontram-se na pasta no drive:
+https://drive.google.com/drive/folders/10-NVKqxs4x7qVqWVZ4nMMum5PE_cLFZ_?usp=sharing 
 
 ---
 
