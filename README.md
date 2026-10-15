@@ -20,7 +20,7 @@ Sérgio Roberto Santos de Santana **
 
 Para o treinamento dos modelos, será utilizado o *dataset* **"Aircraft Damage Detection"** (obtido via [Roboflow Universe](https://universe.roboflow.com/college-jcb9y/aircraft-damage-detection-a8z4k)).
 
-### Detecção de Defeitos
+### Detecção de Defeitos......
 
 O *dataset* original é rotulado para **Detecção de Objetos** (localização da falha via *bounding boxes*). O foco é treinar modelos para **detecção de defeitos em aeronaves**, ou seja, identificar a presença e a localização das anomalias.
 
